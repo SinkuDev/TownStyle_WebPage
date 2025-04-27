@@ -1,0 +1,82 @@
+import { Link } from "react-router-dom";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-800">
+
+        {/* header section  */}
+        <header className="bg-white shadow-md">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <Link to="/" className="text-xl font-bold text-blue-600">
+          Smart Seating
+        </Link>
+        <nav className="space-x-4">
+          <Link to="/" className="text-gray-700 hover:text-blue-600">
+            Home
+          </Link>
+          <Link to="/login" className="text-gray-700 hover:text-blue-600">
+            Login
+          </Link>
+          <Link to="/signup" className="text-gray-700 hover:text-blue-600">
+            Sign Up
+          </Link>
+        </nav>
+      </div>
+    </header>
+
+
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center py-20 px-6 bg-white shadow-md">
+        <h1 className="text-4xl font-bold mb-4">Smart Seating & Student Management</h1>
+        <p className="text-lg max-w-2xl mb-6">
+          Streamline classroom and exam hall arrangements with our easy-to-use platform.
+          From managing students and rooms to generating automated seating plans — everything in one place.
+        </p>
+        <div className="space-x-4">
+          <Link to="/login">
+            <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+              Login
+            </button>
+          </Link>
+          <Link to="/signup">
+            <button className="bg-gray-200 px-6 py-2 rounded hover:bg-gray-300">
+              Sign Up
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 px-6 max-w-5xl mx-auto">
+        <h2 className="text-2xl font-semibold text-center mb-12">Why Choose Us?</h2>
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h3 className="font-bold text-xl mb-2">Automated Seating</h3>
+            <p>Save hours of manual work by generating seating arrangements in seconds.</p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h3 className="font-bold text-xl mb-2">Easy Room Management</h3>
+            <p>Add, edit, and organize classrooms and exam halls effortlessly.</p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h3 className="font-bold text-xl mb-2">Student Database</h3>
+            <p>Manage student information securely and access it anywhere, anytime.</p>
+          </div>
+        </div>
+      </section>
+
+
+{/* footer section o */}
+      <footer className="bg-gray-800 text-white py-6 mt-10">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <p className="text-sm">&copy; {new Date().getFullYear()} Smart Seating App. All rights reserved.</p>
+        <div className="flex space-x-4 mt-2 md:mt-0">
+          <a href="#" className="text-sm hover:underline">Privacy</a>
+          <a href="#" className="text-sm hover:underline">Terms</a>
+          <a href="#" className="text-sm hover:underline">Contact</a>
+        </div>
+      </div>
+    </footer>
+    </div>
+  );
+}
