@@ -3,22 +3,25 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function SignupPage() {
-  const [username, setUsername] = useState("");
+  // 🔁 Use 'name' instead of 'username' to match backend
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
+      // ✅ Keys must match backend DTO: name, email, password
       const res = await axios.post("http://localhost:8080/api/auth/signup", {
-        username,
+        name,
         email,
         password,
       });
-      alert(res.data); // backend se aayi message show karo
+      alert(res.data); // "Signup successful" ya "User already exists"
     } catch (err) {
-      console.error(err);
-      alert("Signup failed");
+      console.error("Full error :", err);
+      const errorMessage = err.response?.data?.message || "Signup failed";
+      alert(errorMessage);
     }
   };
 
@@ -30,12 +33,13 @@ export default function SignupPage() {
       >
         <h2 className="text-2xl font-bold mb-4 text-center">Create an Account</h2>
 
+        {/* ✅ Use 'name' instead of 'username' */}
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Name"
           className="w-full p-2 mb-3 border rounded"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
 
         <input

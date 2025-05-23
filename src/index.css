@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+/* .neon-glow {
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #a020f0,
+    0 0 55px #a020f0,
+    0 0 75px #a020f0;
+} */
+
+
+/* Remove default margin & padding from body and html */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f9fafb; /* ya jo bhi background color chahiye */
+}
